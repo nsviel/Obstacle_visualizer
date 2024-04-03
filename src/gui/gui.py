@@ -8,7 +8,6 @@ import dearpygui.dearpygui as dpg
 # GUI creation / Destruction
 def initialization():
     dpg.create_context()
-    gui_theme.gui_font()
     gui_theme.gui_theme()
     setup_gui()
 def loop():

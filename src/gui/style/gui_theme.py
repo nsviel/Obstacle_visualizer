@@ -6,11 +6,6 @@ color_info = (0, 200, 200)
 color_title = (200, 200, 200)
 
 
-def gui_font():
-    with dpg.font_registry():
-        param.gui_font_def = dpg.add_font("src/gui/font/ProggyClean.ttf", 13)
-        param.gui_font_big = dpg.add_font("src/gui/font/DroidSans.ttf", 25)
-
 def gui_theme():
     color_white = (255, 255, 255)
     color_black = (0, 0, 0)
