@@ -1,5 +1,5 @@
 #---------------------------------------------
-from src.param import param_control
+from src.utils import param
 from src.gui.background import gui_ID
 from src.base import window
 from src.utils import parser_json
@@ -15,7 +15,7 @@ class Data_window(window.Window):
     def save_coord_to_file(self):
         pose = parser_json.get_pos_from_json()
         pose["edge"]["data"] = dpg.get_item_pos(self.ID.ID_node)
-        parser_json.upload_file(param_control.path_node_pose, pose)
+        parser_json.upload_file(param.path_node_pose, pose)
 
     # Update function
     def update(self):

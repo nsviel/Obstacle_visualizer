@@ -1,5 +1,5 @@
 #---------------------------------------------
-from src.param import param_control
+from src.utils import param
 from src.gui.panel import panel_demo
 from src.gui.background import gui_ID
 from src.element import element
@@ -11,7 +11,7 @@ def callback_demo():
     demo.show_demo()
 
 def callback_close():
-    param_control.run_loop = False
+    param.run_loop = False
 
 def callback_wallet():
     element.object.misc.wallet.window.set_visible()

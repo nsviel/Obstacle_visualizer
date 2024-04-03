@@ -1,5 +1,5 @@
 #---------------------------------------------
-from src.param import param_control
+from src.utils import param
 from src.base import node
 from src.gui.style import colorization
 from src.gui.style import gui_color
@@ -54,16 +54,16 @@ class Data_node(node.Node):
         pose = parser_json.get_pos_from_json()
         dpg.set_item_pos(self.ID.ID_node, pose["edge"]["data"])
     def init_values(self):
-        width, height, channels, data = dpg.load_image(param_control.path_state_initial + "image")
+        width, height, channels, data = dpg.load_image(param.path_state_initial + "image")
         dpg.set_value(self.ID.ID_image, data)
 
     # Update function
     def update(self):
         pass
     def update_image(self):
-        width, height, channels, data = dpg.load_image(param_control.path_state_current + "image")
+        width, height, channels, data = dpg.load_image(param.path_state_current + "image")
         try:
             dpg.set_value(self.ID.ID_image, data)
         except:
             print("[\033[1;31merror\033[0m] Image dimension error [%s|%s]"% (width, height))
-            param_control.run_loop = False
+            param.run_loop = False

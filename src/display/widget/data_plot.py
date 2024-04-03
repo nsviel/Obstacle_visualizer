@@ -1,6 +1,6 @@
 #---------------------------------------------
 from src.utils import function
-from src.param import param_control
+from src.utils import param
 import dearpygui.dearpygui as dpg
 import random
 
@@ -40,8 +40,8 @@ class Data_plot:
 
     # Packet processing
     def process_l1_data(self, packet):
-        path = param_control.state_control["ssd"]["path"]["path_l1_file"]
+        path = param.state_control["ssd"]["path"]["path_l1_file"]
         self.update_plot_l1(len(packet))
     def process_l2_data(self, packet):
-        path = param_control.state_control["ssd"]["path"]["path_l2_file"]
+        path = param.state_control["ssd"]["path"]["path_l2_file"]
         self.update_plot_l2(len(packet))

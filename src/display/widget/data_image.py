@@ -1,5 +1,5 @@
 #---------------------------------------------
-from src.param import param_control
+from src.utils import param
 from src.connection.HTTPS.client import https_client_get
 from src.base import daemon
 from src.element import element

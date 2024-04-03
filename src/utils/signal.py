@@ -1,5 +1,5 @@
 #---------------------------------------------
-from src.param import param_control
+from src.utils import param
 from src.utils import terminal
 
 import socket
@@ -16,7 +16,7 @@ import psutil
 
 # Manage Ctrl+C input
 def handler(signum, frame):
-    param_control.run_loop = False
+    param.run_loop = False
 
 signal.signal(signal.SIGINT, handler)
 
@@ -24,7 +24,7 @@ def system_clear():
     os.system('clear')
 
 def update_nb_thread():
-    param_control.state_control["control"]["info"]["nb_thread"] = threading.active_count()
+    param.state_control["control"]["info"]["nb_thread"] = threading.active_count()
 
 def check_for_root():
     if not os.geteuid() == 0:

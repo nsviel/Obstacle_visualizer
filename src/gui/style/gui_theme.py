@@ -1,5 +1,5 @@
 #---------------------------------------------
-from src.param import param_control
+from src.utils import param
 import dearpygui.dearpygui as dpg
 
 color_info = (0, 200, 200)
@@ -8,8 +8,8 @@ color_title = (200, 200, 200)
 
 def gui_font():
     with dpg.font_registry():
-        param_control.gui_font_def = dpg.add_font("src/gui/font/ProggyClean.ttf", 13)
-        param_control.gui_font_big = dpg.add_font("src/gui/font/DroidSans.ttf", 25)
+        param.gui_font_def = dpg.add_font("src/gui/font/ProggyClean.ttf", 13)
+        param.gui_font_big = dpg.add_font("src/gui/font/DroidSans.ttf", 25)
 
 def gui_theme():
     color_white = (255, 255, 255)

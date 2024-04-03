@@ -5,7 +5,7 @@
 # - /get_image
 #---------------------------------------------
 
-from src.param import param_control
+from src.utils import param
 from src.connection.HTTPS.client import https_client_fct
 from src.utils import parser_json
 
@@ -26,15 +26,15 @@ def send_https_get(ip, port, connected, command):
     return data
 
 def get_image(dest):
-    ip = param_control.state_edge["hub"]["info"]["ip"]
-    port = param_control.state_edge["hub"]["http"]["server_port"]
-    connected = param_control.state_control["interface"]["edge"]["http_connected"]
-    
+    ip = param.state_edge["hub"]["info"]["ip"]
+    port = param.state_edge["hub"]["http"]["server_port"]
+    connected = param.state_control["interface"]["edge"]["http_connected"]
+
     command = "/get_image"
     data = send_https_get(ip, port, connected, command)
     if(data != None):
         if(len(data) != 0):
-            img = open(param_control.path_state_current + "image", "wb")
+            img = open(param.path_state_current + "image", "wb")
             img.write(data)
             img.close()
             return True
